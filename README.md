@@ -1,39 +1,41 @@
-# Lab: Class 3 - File IO and Exceptions
+# Lab: Class 4 - Garage Band with OOP
 
 ## Author: Xin Deng, chatGPT
 
 ## Links and Resources
 
-- chatGPT on how to use tuple, .format, .strip, and what raising exceptions meant and correct docstring format and content
-- [Unpacking Arrays](https://realpython.com/python-kwargs-and-args/#unpacking-with-the-asterisk-operators)
+- chatGPT on what certain errors meant
 
 
 ## Overview - madlib-cli
 
-In this lab assignment you will be creating a command line application which takes advantage of Python’s built in capabilities for reading and writing files to create a Madlib game
-
+Creating a Garage Band with Object Oriented Programming.
 
 
 ## Feature Tasks and Requirements
 
-- Create a local git repo with project named madlib-cli and root folder madlib_cli
-- Create a new repository named madlib-cli.
+- Create a local git repo with project named pythonic-garage-band
+- Create a new repository named pythonic-garage-band
 - Link your local and remote repositories.
 
-1. Create a file called madlib.py at root of madlib_cli folder, which will contain all of the Python code that you will write relating to your Madlib game.
-2. Keeping in mind the concept of Single Responsibility Principle, build a command line tool which will perform the following:
-    - Print a welcome message to the user, explaining the Madlib process and command line interactions
-    - Read a template Madlib file (Example), and parse that file into usable parts.
-    - Prompt the user to submit a series of words to fit each of the required components of the Madlib template.
-    - With the collected user inputs, populate the template such that each provided input is placed into the correct position within the template.
-    - After the resulting Madlib has been completed, provide the completed response back to the user in the command line.
-    - Write the completed text (Example)to a new file on your file system (in the repo).
-    - Note: A smaller example file is included as well which can be handy when developing/testing.
-3. Create and test a read_template function that takes in a path to text file and returns a stripped string of the file’s contents.
-read_template should raise a FileNotFoundError if path is invalid.
-4. Create and test a parse_template function that takes in a template string and returns a string with language parts removed and a separate tuple of those language parts.
-5. Create and test a merge function that takes in a “bare” template and a list of user entered language parts, and returns a string with the language parts inserted into the template.
 
+1. Use Python classes to model a Band made up of different kinds of musicians.
+2. Start with Guitarist, Bassist, and Drummer.
+3. Make use of a Musician base class to handle common functionality which particular kinds of musicians will inherit.
+
+**Band Tests:**
+
+1. A Band instance should have a `name` attribute which is a string.
+2. A Band instance should have a `members` attribute which is a list of instances that inherit from Musician base (or super) class.
+3. A Band instance should have a `play_solos` method that asks each member musician to play a solo, in the order they were added to the band.
+4. A Band instance should have appropriate `__str__` and `__repr__` methods.
+5. A Band should have a class method `to_list` which returns a list of previously created Band instances.
+
+**Musician Subclass Tests:**
+
+1. Each kind of Musician instance should have appropriate `__str__` and `__repr__` methods.
+2. Each kind of Musician instance should have a `get_instrument` method that returns a string.
+3. Each kind of Musician instance should have a `play_solo` method that returns a string.
 
 ## Setup
 
@@ -144,28 +146,4 @@ Should result in a file tree like this:
 
 
 
-# LAB - Class xx
-
-## Project: Project Name Here
-
-### Author: Student/Group Name
-
-### Links and Resources
-- Back-end server URL (when applicable)
-- Front-end application (when applicable)
-
-### Setup
-- **.env requirements (where applicable):**
-  - `PORT` - Port Number
-  - `DATABASE_URL` - URL to the running Postgres instance/db
-
-- **How to initialize/run your application (where applicable):**
-  - For example: `python main.py`
-
-- **How to use your library (where applicable):**
-
-### Tests
-- **How do you run tests?**
-- **Any tests of note?**
-- **Describe any tests that you did not complete, skipped, etc.**
 
